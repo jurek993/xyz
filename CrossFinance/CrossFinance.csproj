@@ -110,6 +110,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\AddFile.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\simple-line-icons.css" />
     <Content Include="Content\Site.css" />
@@ -130,12 +131,7 @@
     <Content Include="fonts\Simple-Line-Icons.svg" />
     <Content Include="Global.asax" />
     <Content Include="img\bg-masthead.jpg" />
-    <Content Include="img\bg-showcase-1.jpg" />
-    <Content Include="img\bg-showcase-2.jpg" />
-    <Content Include="img\bg-showcase-3.jpg" />
-    <Content Include="img\testimonials-1.jpg" />
-    <Content Include="img\testimonials-2.jpg" />
-    <Content Include="img\testimonials-3.jpg" />
+    <Content Include="Scripts\AddFile.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\fontawesome-webfont.eot" />
@@ -164,6 +160,7 @@
     <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Agreement.cs" />
     <Compile Include="Models\FinancialState.cs" />
+    <Compile Include="Models\MainViewModel.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
