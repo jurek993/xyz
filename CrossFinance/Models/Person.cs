@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.Serialization;
 
 namespace CrossFinance.Models
 {
     [Table("Person")]
-    public class Person
+    public class Person : IExtensibleDataObject 
     {
         [Key]
         public int Id { get; set; }
@@ -34,5 +35,7 @@ namespace CrossFinance.Models
         [Column(TypeName = "VARCHAR")]
         [StringLength(300)]
         public string PhoneNumber2 { get; set; }
+        [NotMapped]
+        public ExtensionDataObject ExtensionData { get; set; }
     }
 }

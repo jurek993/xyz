@@ -11,7 +11,7 @@ namespace CrossFinance.XLSXReader
         public List<object> MapObject(List<List<object>> allData)
         {
             List<object> List = new List<object>();
-            object[] financialState = new object[20];
+            object[] financialState = new object[8];
             for (int i = 0; i < allData.FirstOrDefault().Count(); i++)
             {
                 int j = 0;
@@ -27,8 +27,7 @@ namespace CrossFinance.XLSXReader
                     }
                     j++;
                 }
-                var financial = objectToFinancialState(financialState);
-                List.Add(financial);
+                List.Add(objectToFinancialState(financialState));
             }
             return List;
         }

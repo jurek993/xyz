@@ -20,6 +20,9 @@ namespace CrossFinance.Models
         [Display(Name = "File")]
         public HttpPostedFileBase File { get; set; }
         public List<string> ErrorList { get; set; }
+
+        public int CorrectlyAdded { get; set; } = 0;
+
         public int DataSize { get; set; }
         public List<RowsName> RowsNamesInImportedDocument { get; set; }
     }

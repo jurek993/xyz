@@ -32,11 +32,10 @@ namespace CrossFinance.XLSXReader
             {
                 FirstName = row[0].ToString(),
                 Surname = row[1].ToString(),
-                NationalIdentificationNumber = row[2].ToString(), //todo: tu chieli coś parsujące to
+                NationalIdentificationNumber = row[2].ToString(),
                 PhoneNumber = row[3].ToString(),
                 PhoneNumber2 = row[4].ToString()
             };
         }
     }
-
 }

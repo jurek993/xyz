@@ -1,5 +1,6 @@
 ﻿using CrossFinance.Helpers;
 using CrossFinance.Models;
+using CrossFinance.WebService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,18 @@ namespace CrossFinance.Database
                 {
                     if (!InsertSingleRow(persons.ElementAt(i), addresses.ElementAt(i), financials.ElementAt(i), agrements.ElementAt(i)))
                     {
-                        _model.ErrorList.Add("Can't add row number: " + i + 1 + " to database");
+                        _model.ErrorList.Add("Can't add row number: " + (i + 1) + " to database");
                     }
-                    
+                    else
+                    {
+                        _model.CorrectlyAdded++;
+                        WebServiceExporter webService = new WebService.WebServiceExporter();
+                        webService.Export(persons.ElementAt(i), addresses.ElementAt(i), financials.ElementAt(i), agrements.ElementAt(i));
+                    }
                 }
                 else
                 {
-                    _model.ErrorList.Add("Can't add row number: " + i + 1 + " to database\nErrorMessage:"+ error);
+                    _model.ErrorList.Add("Can't add row number: " + (i + 1) + " to database\nErrorMessage:"+ error);
                 }
             }
         }
@@ -68,9 +74,9 @@ namespace CrossFinance.Database
             PeselValidation peselValidation = new PeselValidation();
             if (!peselValidation.Valid(person.NationalIdentificationNumber))
             {
-                error+= "Pesel: " + person.NationalIdentificationNumber + "is incorrect";
+                error+= "Pesel: " + person.NationalIdentificationNumber + " is incorrect";
             }
-            if(financial == null)
+            if(financial.Id != 0)
             {
                 error += "Wrong data in FinancialState.";
             }
