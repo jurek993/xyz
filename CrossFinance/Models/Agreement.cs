@@ -13,6 +13,7 @@ namespace CrossFinance.Models
         [Key]
         public int Id { get; set; }
         [Column(TypeName = "VARCHAR")]
+        [Display(Name = "nr_umowy")]
         [StringLength(3000)]
         public string Number { get; set; }
         [ForeignKey("Person")]
